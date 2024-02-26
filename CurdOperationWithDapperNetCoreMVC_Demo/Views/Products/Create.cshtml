@@ -4,10 +4,11 @@
     ViewData["Title"] = "Create";
 }
 
-<h4>Add New Product</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<div class="card rounded-0">
+    <div class="card-header">
+        <h4>Add New Product</h4>
+    </div>
+    <div class="card-body">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -25,15 +26,12 @@
                 <textarea asp-for="ProdcutDescription" class="form-control"></textarea>
                 <span asp-validation-for="ProdcutDescription" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+            <div class="form-group" style=" float:right; margin-top:10px">
+                <input type="submit" value="Save" class="btn btn-primary rounded-0" />
+                <a href="@Url.Action("Index", "Products")" class="btn btn-md btn-primary rounded-0"><i class="fa-solid fa-backward"></i> Back to list</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
